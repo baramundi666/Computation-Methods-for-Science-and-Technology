@@ -13,7 +13,7 @@
 \maketitle
 
 
-\section*{Zadanie 1}
+\section*{Zadanie 1.}
 \textbf{Oblicz przybliżoną wartość pochodnej funkcji tan(x) dla x = 1.} 
 \\\\
 Dla wzoru $f'(x)\approx\frac{f(x+h)-f(x)}{h}$, błędy prezentują się następująco:
@@ -51,8 +51,16 @@ $$h_{min} \approx \sqrt[3]{3\cdot2^{-53}/56.7}
 \approx 1.8 \cdot 10^{-6}$$
 \\
 Otrzymane wartości są tego samego rzędu wielkości.  \\
+\\
+\subsection*{Wnioski}
+Z obliczeń wynika, że lepszą dokładność - mniejszą
+wartość błędu obliczeniowego zapewniła druga 
+wykorzystana metoda. \\
+Wyznaczona wartość $h_{min}$ była bliższa wartości
+obliczonej na podstawie wzoru dla drugiej metody.
+\\
 
-\section*{Zadanie 2}
+\section*{Zadanie 2.}
 \textbf{Napisz program generujący pierwsze n wyrazów ciągu zdefiniowa-
 nego równaniem różnicowym:
 $$x_{k+1} = 2.25\cdot x_k - 0.5\cdot x_{k-1},$$
@@ -91,8 +99,7 @@ Od elementów rzędu $10^{-11}$ wyrazy ciągu zaczynają rosnąć, zamiast male�
 tym jak powinien się zachowywać zadany ciąg. Wynika to z tego, że brak dokładności
 w jednym z obliczeń kolejnego wyrazu ciągu powoduje, że element \textit{k+1}-szy,
 ma wartość większą od elementu \textit{k}-tego, co powoduje zmianę kierunku
-monotoniczności ciągu na przeciwny.
-
+monotoniczności ciągu na przeciwny. \\
 
 
 
