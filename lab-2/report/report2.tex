@@ -17,20 +17,50 @@ Laboratorium 2\\
 
 
 \section*{Zadanie 1.}
-\textbf{Zastosuj metodę najmniejszych kwadratów do predykcji, czy nowotwór jest złośliwy (ang. malignant) czy łagodny (ang. benign).} 
+\textbf{Zastosuj metodę najmniejszych kwadratów do predykcji, czy nowotwór 
+jest złośliwy (ang. malignant) czy łagodny (ang. benign).
+Nowotwory złośliwe i łagodne mają różne charakterystyki wzrostu. Istotne cechy to m. in. promień i tekstura. Charakterystyki te wyznaczane są poprzez
+diagnostykę obrazową i biopsje.} 
 \\\\
-abc
-\subsection*{Wnioski}
-\null\quad bruh
-
-
-
-\section*{Źródła}
+Przykładowe dane:
+\begin{figure}[ht!]
+  \includegraphics[width=\linewidth]{figures/hist.png}
+\end{figure}
+\begin{figure}[ht!]
+  \includegraphics[width=\linewidth]{figures/plot.png}
+\end{figure}
+\\
+Korzystając z $A_{lin}$ - liniowej reprezentacji oraz $A_{quad}$ - 
+kwadratowej reprezentacji danych z pierwszego zbioru dostarczonego do zadania, jesteśmy w 
+stanie wyznaczyć wektor wag $w$:
+$$ A^T \cdot A \cdot w = A^T \cdot b$$
+W tym celu wykorzystuję funkcję \textit{scipy.linalg.solve}, służącą do rozwiązywania 
+układów równań liniowych, z biblioteki \textit{SciPy}. \\\\
+Współczynniki uwarunkowania macierzy liczę korzystając z funkcji \textit{numpy.linalg.cond} 
+z biblioteki \textit{NumPy}.
+Wartości wyniosły:
 \begin{itemize}
-    \item \url{https://en.wikipedia.org/wiki/Single-precision_floating-point_format}
-    \item \url{https://en.wikipedia.org/wiki/Double-precision_floating-point_format}
+  \item dla reprezentacji liniowej - $cond(A^T\cdot A)\approx 1.81\cdot 10^{12}$
+  \item dla reprezentacji kwadratowej - $cond(A^T\cdot A)\approx 9.06\cdot 10^{17}$
 \end{itemize}
-
+Następnie wyznaczając wektor $p$ na podstawie danych z drugiego zbioru dostarczonego do
+zadania i porównując go z wartościami prawdziwymi, jesteśmy w stanie oszacować dokładność
+metody dla różnych reprezentacji macierzowych danych:
+\begin{center}
+  \begin{tabular}{  |c|c|c| } 
+   \hline
+   Matrix representation & false-positives & false-negatives\\
+   \hline
+   linear & 6 & 2\\
+   \hline
+   quadratic & 15 & 5\\
+   \hline
+  \end{tabular}
+\end{center}
+\subsection*{Wnioski}
+\null\quad Reprezentacja liniowa okazała się być dokładniejsza dla dostarczonych
+zbiorów danych - zapewniła mniejszy współczynnik uwarunkowania oraz zwróciła mniejszą
+ilość wyników fałszywych niż reprezentacja kwadratowa.
 
 
 \end{document}
