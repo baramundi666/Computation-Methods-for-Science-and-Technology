@@ -57,10 +57,21 @@ metody dla różnych reprezentacji macierzowych danych:
    \hline
   \end{tabular}
 \end{center}
-\subsection*{Wnioski}
+Dokładność reprezentacji macierzowych:
+\begin{itemize}
+  \item linear: $accuracy = \frac{260-6-2}{260} \approx 96.9 \%$
+  \item quadratic: $accuracy = \frac{260-15-5}{260} \approx 93.5 \%$
+\end{itemize}
+  \subsection*{Wnioski}
 \null\quad Reprezentacja liniowa okazała się być dokładniejsza dla dostarczonych
-zbiorów danych - zapewniła mniejszy współczynnik uwarunkowania oraz zwróciła mniejszą
-ilość wyników fałszywych niż reprezentacja kwadratowa.
+zbiorów danych - zwróciła mniejszą
+ilość wyników fałszywych niż reprezentacja kwadratowa. Wynika to zapewne
+z faktu, że dostarczyliśmy w reprezentacji kwadratowej mniej danych - 
+zaledwie 4 kolumny. \\
+Wykorzystanie w metodzie reprezentacji liniowej, zapewniło 
+mniejszy współczynnik uwarunkowania. Błąd reprezentacji 
+numerycznej zbiorów danych powoduje w reprezentacji kwadratowej
+większy błąd wyniku.
 
 
 \end{document}
