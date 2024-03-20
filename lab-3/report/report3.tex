@@ -36,45 +36,68 @@ się następująco:}
 \textbf{Istnieje dokładnie jeden wielomian ósmego stopnia, który interpoluje
  powyższe dziewięć punktów, natomiast sam wielomian może być reprezentowany na różne sposoby.}
 \\\\
-Przykładowe dane:
-\begin{figure}[ht!]
-  \includegraphics[width=\linewidth]{figures/hist.png}
-\end{figure}
-\begin{figure}[ht!]
-  \includegraphics[width=\linewidth]{figures/plot.png}
-\end{figure}
-\\
-Korzystając z $A_{lin}$ - liniowej reprezentacji oraz $A_{quad}$ - 
-kwadratowej reprezentacji danych z pierwszego zbioru dostarczonego do zadania, jesteśmy w 
-stanie wyznaczyć wektor wag $w$:
-$$ A^T \cdot A \cdot w = A^T \cdot b$$
-W tym celu wykorzystuję funkcję \textit{scipy.linalg.solve}, służącą do rozwiązywania 
-układów równań liniowych, z biblioteki \textit{SciPy}. \\\\
-Współczynniki uwarunkowania macierzy liczę korzystając z funkcji \textit{numpy.linalg.cond} 
-z biblioteki \textit{NumPy}.
-Wartości wyniosły:
-\begin{itemize}
-  \item dla reprezentacji liniowej - $cond(A^T\cdot A)\approx 1.81\cdot 10^{12}$
-  \item dla reprezentacji kwadratowej - $cond(A^T\cdot A)\approx 9.06\cdot 10^{17}$
-\end{itemize}
-Następnie wyznaczając wektor $p$ na podstawie danych z drugiego zbioru dostarczonego do
-zadania i porównując go z wartościami prawdziwymi, jesteśmy w stanie oszacować dokładność
-metody dla różnych reprezentacji macierzowych danych:
+Dla każdej z macierzy Vandermonde'a powstałych na podstawie zbiorów funkcji 
+bazowych $\phi$:
+$$ \phi_j(t) = t^{j-1}\mbox{, dla } j = 1,\dots,9$$
+$$ \phi_j(t) = (t-1900)^{j-1}\mbox{, dla } j = 1,\dots,9$$
+$$ \phi_j(t) = (t-1940)^{j-1}\mbox{, dla } j = 1,\dots,9$$
+$$ \phi_j(t) = \left(\frac{t-1940}{40}\right)^{j-1} \mbox{, dla } j = 1,\dots,9$$
+, współczynniki uwarunkowania wynosiły:
 \begin{center}
   \begin{tabular}{  |c|c|c| } 
    \hline
-   Matrix representation & false-positives & false-negatives\\
+   base function & $cond(V)$\\
    \hline
-   linear & 6 & 2\\
+   $\phi_1$ & $3.98 \cdot 10^{32}$ \\
    \hline
-   quadratic & 15 & 5\\
+   $\phi_2$ & $6.31 \cdot 10^{15}$ \\
+   \hline
+   $\phi_3$ & $9.32 \cdot 10^{12}$ \\
+   \hline
+   $\phi_4$ & $1.61 \cdot 10^{3}$ \\
    \hline
   \end{tabular}
 \end{center}
+Najlepiej uwarunkowaną bazą wielomianów jest
+ta zbudowana na podstawie zbioru funkcji $\phi_j(t) = \left(\frac{t-1940}{40}\right)^{j-1}$.
+\\\\
+Korzystając z tej bazy i wykorzystując schemat \textit{Hornera}, 
+obliczyłem wartości wielomianu interpolacyjnego na przedziale $[1900; 1990]$:
+\begin{figure}[ht!]
+  \includegraphics[width=\linewidth]{figures/vandermore.png}
+\end{figure}
+\\
+Na podstawie obliczonego wielomianu interpolacyjnego, wartość dla roku
+1990 wynosi $\approx 82 749 141$, co w stosunku do prawdziwej wartości,
+równej $248 709 873$, daje błąd względny na poziomie $\approx 66.73\%$.
+\\\\
+Wielomian interpolacyjny \textit{Lagrange}'a:
+\begin{figure}[ht!]
+  \includegraphics[width=\linewidth]{figures/lagrange.png}
+\end{figure}
+\\\\\\\\\\\\\\\\\\\\\\
+Wielomian interpolacyjny \textit{Newton}'a:
+\begin{figure}[ht!]
+  \includegraphics[width=\linewidth]{figures/newton.png}
+\end{figure}
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+Po zaokrągleniu danych populacji dla każdego roku w tabeli, wciąż wykorzystując 
+najlepiej uwarunkowaną bazę funkcji $\phi$, otrzymujemy następujący 
+wielomian interpolacyjny:
+\begin{figure}[ht!]
+  \includegraphics[width=\linewidth]{figures/new_vandermore.png}
+\end{figure}
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
 \subsection*{Wnioski}
-\null\quad Reprezentacja liniowa okazała się być dokładniejsza dla dostarczonych
-zbiorów danych - zapewniła mniejszy współczynnik uwarunkowania oraz zwróciła mniejszą
-ilość wyników fałszywych niż reprezentacja kwadratowa.
+\null\quad ...
+Współczynniki są tego samego rzędu wielkości.
+
+\section*{Źródła}
+\begin{itemize}
+    \item \url{https://en.wikipedia.org/wiki/Newton_polynomial}
+    \item \url{https://heath.cs.illinois.edu/scicomp/notes/cs450_chapt07.pdf}
+\end{itemize}
 
 
 \end{document}
