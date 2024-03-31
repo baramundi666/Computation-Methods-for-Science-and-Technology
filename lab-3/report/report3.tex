@@ -3,6 +3,7 @@
 \usepackage{hyperref}
 \usepackage[T1]{fontenc}
 \usepackage{graphicx}
+\usepackage{float}
 \usepackage[utf8]{inputenc}
 
 
@@ -10,7 +11,7 @@
 Laboratorium 3\\
   \huge Interpolacja}
 \author{Mateusz Król}
-\date{12/03/2024 r.}
+\date{20/03/2024 r.}
 
 \begin{document}
 \maketitle
@@ -63,35 +64,34 @@ ta zbudowana na podstawie zbioru funkcji $\phi_j(t) = \left(\frac{t-1940}{40}\ri
 \\\\
 Korzystając z tej bazy i wykorzystując schemat \textit{Hornera}, 
 obliczyłem wartości wielomianu interpolacyjnego na przedziale $[1900; 1990]$:
-\begin{figure}[ht!]
+\begin{figure}[H]
   \includegraphics[width=\linewidth]{figures/vandermore.png}
 \end{figure}
-\\
 Na podstawie obliczonego wielomianu interpolacyjnego, wartość dla roku
 1990 wynosi $\approx 82 749 141$, co w stosunku do prawdziwej wartości,
 równej $248 709 873$, daje błąd względny na poziomie $\approx 66.73\%$.
 \\\\
 Wielomian interpolacyjny \textit{Lagrange}'a:
-\begin{figure}[ht!]
+\begin{figure}[H]
   \includegraphics[width=\linewidth]{figures/lagrange.png}
 \end{figure}
-\\\\\\\\\\\\\\\\\\\\\\
 Wielomian interpolacyjny \textit{Newton}'a:
-\begin{figure}[ht!]
+\begin{figure}[H]
   \includegraphics[width=\linewidth]{figures/newton.png}
 \end{figure}
-\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 Po zaokrągleniu danych populacji dla każdego roku w tabeli, wciąż wykorzystując 
 najlepiej uwarunkowaną bazę funkcji $\phi$, otrzymujemy następujący 
 wielomian interpolacyjny:
-\begin{figure}[ht!]
+\begin{figure}[H]
   \includegraphics[width=\linewidth]{figures/new_vandermore.png}
 \end{figure}
-\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 \subsection*{Wnioski}
-\null\quad ...
-Współczynniki są tego samego rzędu wielkości.
+\null\quad Pomimo zupełnie różnych sposobów reprezentacji wielomianu, 
+wykresy prezentują się dokładnie tak samo. \\
+\null\quad Zaokrąglenie danych populacji w podpunkcie (g), 
+doprowadziło do otrzymania mniejszego błędu względnego ekstrapolowanej 
+wartości dla roku 1990. Błąd spadł z $\approx 66.7\%$ do $\approx 59.8\%$.
 
 \section*{Źródła}
 \begin{itemize}
