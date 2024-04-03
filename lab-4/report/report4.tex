@@ -10,7 +10,7 @@
 Laboratorium 4\\
   \huge Efekt Rungego}
 \author{Mateusz Król}
-\date{21/03/2024 r.}
+\date{03/04/2024 r.}
 
 \begin{document}
 \maketitle
@@ -18,83 +18,21 @@ Laboratorium 4\\
 
 \section*{Zadanie 1.}
 \textbf{Wyznacz wielomiany interpolujące funkcje:}
-\begin{center}
-  \begin{tabular}{c c} 
-   Rok & Populacja\\
-   1900 & 76 212 168\\
-   1910 & 92 228 496\\
-   1920 & 106 021 537\\
-   1930 & 123 202 624\\
-   1940 & 132 164 569\\
-   1950 & 151 325 798\\
-   1960 & 179 323 175\\
-   1970 & 203 302 031\\
-   1980 &226 542 199
-  \end{tabular}
-\end{center}
-\textbf{Istnieje dokładnie jeden wielomian ósmego stopnia, który interpoluje
- powyższe dziewięć punktów, natomiast sam wielomian może być reprezentowany na różne sposoby.}
-\\\\
-Dla każdej z macierzy Vandermonde'a powstałych na podstawie zbiorów funkcji 
-bazowych $\phi$:
-$$ \phi_j(t) = t^{j-1}\mbox{, dla } j = 1,\dots,9$$
-$$ \phi_j(t) = (t-1900)^{j-1}\mbox{, dla } j = 1,\dots,9$$
-$$ \phi_j(t) = (t-1940)^{j-1}\mbox{, dla } j = 1,\dots,9$$
-$$ \phi_j(t) = \left(\frac{t-1940}{40}\right)^{j-1} \mbox{, dla } j = 1,\dots,9$$
-, współczynniki uwarunkowania wynosiły:
-\begin{center}
-  \begin{tabular}{  |c|c|c| } 
-   \hline
-   base function & $cond(V)$\\
-   \hline
-   $\phi_1$ & $3.98 \cdot 10^{32}$ \\
-   \hline
-   $\phi_2$ & $6.31 \cdot 10^{15}$ \\
-   \hline
-   $\phi_3$ & $9.32 \cdot 10^{12}$ \\
-   \hline
-   $\phi_4$ & $1.61 \cdot 10^{3}$ \\
-   \hline
-  \end{tabular}
-\end{center}
-Najlepiej uwarunkowaną bazą wielomianów jest
-ta zbudowana na podstawie zbioru funkcji $\phi_j(t) = \left(\frac{t-1940}{40}\right)^{j-1}$.
-\\\\
-Korzystając z tej bazy i wykorzystując schemat \textit{Hornera}, 
-obliczyłem wartości wielomianu interpolacyjnego na przedziale $[1900; 1990]$:
-\begin{figure}[ht!]
-  \includegraphics[width=\linewidth]{figures/vandermore.png}
-\end{figure}
+$$f_1(x) = \frac{1}{1 + 25\cdot x^2} \mbox{na przedziale} [-1, 1], $$
+$$f_2(x) = e^{\cos(x)} \mbox{ na przedziale } [0, 2\pi]$$
 \\
-Na podstawie obliczonego wielomianu interpolacyjnego, wartość dla roku
-1990 wynosi $\approx 82 749 141$, co w stosunku do prawdziwej wartości,
-równej $248 709 873$, daje błąd względny na poziomie $\approx 66.73\%$.
+\textbf{używając: \\
+– wielomianów Lagrange’a z równoodległymi węzłami \\
+– kubicznych funkcji sklejanych z równoodległymi węzłami \\
+– wielomianów Lagrange’a z węzłami Czebyszewa:}
 \\\\
-Wielomian interpolacyjny \textit{Lagrange}'a:
-\begin{figure}[ht!]
-  \includegraphics[width=\linewidth]{figures/lagrange.png}
-\end{figure}
-\\\\\\\\\\\\\\\\\\\\\\
-Wielomian interpolacyjny \textit{Newton}'a:
-\begin{figure}[ht!]
-  \includegraphics[width=\linewidth]{figures/newton.png}
-\end{figure}
-\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-Po zaokrągleniu danych populacji dla każdego roku w tabeli, wciąż wykorzystując 
-najlepiej uwarunkowaną bazę funkcji $\phi$, otrzymujemy następujący 
-wielomian interpolacyjny:
-\begin{figure}[ht!]
-  \includegraphics[width=\linewidth]{figures/new_vandermore.png}
-\end{figure}
-\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
 
 \subsection*{Wnioski}
 \null\quad ...
-Współczynniki są tego samego rzędu wielkości.
 
 \section*{Źródła}
 \begin{itemize}
-    \item \url{https://en.wikipedia.org/wiki/Newton_polynomial}
     \item \url{https://heath.cs.illinois.edu/scicomp/notes/cs450_chapt07.pdf}
 \end{itemize}
 
