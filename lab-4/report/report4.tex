@@ -3,6 +3,7 @@
 \usepackage{hyperref}
 \usepackage[T1]{fontenc}
 \usepackage{graphicx}
+\usepackage{float}
 \usepackage[utf8]{inputenc}
 
 
@@ -18,14 +19,20 @@ Laboratorium 4\\
 
 \section*{Zadanie 1.}
 \textbf{Wyznacz wielomiany interpolujące funkcje:}
-$$f_1(x) = \frac{1}{1 + 25\cdot x^2} \mbox{na przedziale} [-1, 1], $$
+$$f_1(x) = \frac{1}{1 + 25\cdot x^2} \mbox{ na przedziale} [-1, 1], $$
 $$f_2(x) = e^{\cos(x)} \mbox{ na przedziale } [0, 2\pi]$$
 \\
-\textbf{używając: \\
-– wielomianów Lagrange’a z równoodległymi węzłami \\
-– kubicznych funkcji sklejanych z równoodległymi węzłami \\
-– wielomianów Lagrange’a z węzłami Czebyszewa:}
-\\\\
+\textbf{używając:} 
+\begin{itemize}
+  \item \textbf{wielomianów Lagrange’a z równoodległymi węzłami}
+  \item \textbf{kubicznych funkcji sklejanych z równoodległymi węzłami} 
+  \item \textbf{wielomianów Lagrange’a z węzłami Czebyszewa:}
+\end{itemize}
+
+\begin{figure}[H]
+  \includegraphics[width=\linewidth]{figures/interpolation.png}
+\end{figure}
+
 
 
 \subsection*{Wnioski}
