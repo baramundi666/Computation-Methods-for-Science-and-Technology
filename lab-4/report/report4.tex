@@ -19,24 +19,44 @@ Laboratorium 4\\
 
 \section*{Zadanie 1.}
 \textbf{Wyznacz wielomiany interpolujące funkcje:}
-$$f_1(x) = \frac{1}{1 + 25\cdot x^2} \mbox{ na przedziale} [-1, 1], $$
-$$f_2(x) = e^{\cos(x)} \mbox{ na przedziale } [0, 2\pi]$$
+$$f_1(x) = \frac{1}{1 + 25\cdot x^2} \mbox{ na przedziale } [-1; 1], $$
+$$f_2(x) = e^{\cos(x)} \mbox{ na przedziale } [0; 2\pi]$$
 \\
 \textbf{używając:} 
 \begin{itemize}
   \item \textbf{wielomianów Lagrange’a z równoodległymi węzłami}
   \item \textbf{kubicznych funkcji sklejanych z równoodległymi węzłami} 
   \item \textbf{wielomianów Lagrange’a z węzłami Czebyszewa:}
-\end{itemize}
+\end{itemize} 
+\newpage
+Porównanie wykresów wielomianów interpolacyjnych funkcji Rungego: \\
 
 \begin{figure}[H]
   \includegraphics[width=\linewidth]{figures/interpolation.png}
+\end{figure}
+\newpage
+Porównanie norm wektorów błędów wielomianów interpolacyjnych funkcji $f_1$ dla
+ $n$ z przedziału $[4;50]$: \\
+
+\begin{figure}[H]
+  \includegraphics[width=\linewidth]{figures/errors_1.png}
+\end{figure}
+\newpage
+Porównanie norm wektorów błędów wielomianów interpolacyjnych funkcji $f_2$ dla
+ $n$ z przedziału $[4;50]$: \\
+
+\begin{figure}[H]
+  \includegraphics[width=\linewidth]{figures/errors_2.png}
 \end{figure}
 
 
 
 \subsection*{Wnioski}
-\null\quad ...
+\null\quad Na podstawie wykresów, jako najbardziej dokładną metodę
+interpolacji z przetestowanych, można okreslić interpolację wielomianami
+\textit{Lagrange}'a z wykorzystaniem węzłów \textit{Chebyshev}'a. \\
+\null\quad Najgorszą okazała się interpolacja zwykłymi wielomianami
+\textit{Lagrange}'a.
 
 \section*{Źródła}
 \begin{itemize}
