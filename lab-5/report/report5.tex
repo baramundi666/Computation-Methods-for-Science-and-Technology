@@ -16,7 +16,7 @@ Laboratorium 5\\
 \begin{document}
 \maketitle
 
-
+ 
 \section*{Zadanie 1.}
 \textbf{Wykonaj aproksymację średniokwadratową punktową populacji
 Stanów Zjednoczonych w przedziale $[1900;1980]$ wielomianami stopnia $m$ dla
@@ -41,16 +41,19 @@ $f(x) = \sqrt{x}$ \textbf{w przedziale} $[0;2]$ \textbf{wielomianem drugiego sto
 Czebyszewa.}
 \newpage
 Wykres przedstawiający porównanie prawdziwych wartości funkcji 
-$f(x) = \sqrt{x}$ oraz wartości aproksymowanych używająć wielomianów
-\textit{Chebyshev}'a.
+$f(x) = \sqrt{x}$ oraz wartości aproksymowanych za pomocą aproksymacji średniokwadratowej ciągłej używająć wielomianów
+$T_k(x)$ \textit{Chebyshev}'a.
 \begin{figure}[H]
   \includegraphics[width=\linewidth]{figures/chebyshev.png}
 \end{figure}
 
 
 \subsection*{Wnioski}
-\null\quad W zadaniu 1, błąd względny był najmniejszy dla $m=2,4$, co
-zgadza się z odpowiednio najmniejszą wartością $AIC_c$ dla $m=2$.
+\null\quad W zadaniu 1, błąd względny był najmniejszy ($\approx0.022$) dla $m=4$, co nie
+zgadza się z odpowiednio najmniejszą wartością $AIC_c$ dla $m=2$. Druga najmniejsza wartość
+błędu jest przyjmowana dla $m=2$. \\
+\null\quad W zadaniu 2, metoda aproksymacji średniokwadratowej ciągłej
+jest tańsza obliczeniowo od aproksymacji jednostajnej.
 
 
 \end{document}
