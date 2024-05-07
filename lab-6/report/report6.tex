@@ -37,10 +37,29 @@ Wykres błędów względnych dla kwadratury trapezów i kwadratury \textit{Simps
 pokrywa się.
 \\\\
 \null\quad
-Z wykresu można odczytać, że zniżanie kroku poniżej $h \approx 10^{-7}$, 
+Z wykresu można odczytać, że kwadratura \textit{Simpson}'a
+w tym przypadku gwarantuje najmniejszą wartość błędu
+względnego. Ponadto, zniżanie kroku poniżej $h \approx 10^{-7}$, 
 nie zmniejsza już błędu kwadratury prostokątów. \\
 Ten wynik zgadza się z wynikiem z \textit{Laboratorium 1}, w którym
-wyznaczone $h_{min}$ wyniosło $10^{-6}$, $10^{-8}$.
+wyznaczone $h_{min}$ wyniosło $10^{-6}$, $10^{-8}$. \\\\
+\null\quad
+Wartości empirycznych rządów zbieżniości dla każdej z
+użytych metod:
+\begin{center}
+  \begin{tabular}{c c} 
+   Method & Empirical order of convergence\\
+   rectangle & $\approx 2.00$\\
+   trapezoid & $\approx 2.00$\\
+   simpson & $\approx 6.21$
+  \end{tabular}
+\end{center}
+\null\quad
+Wartości empirycznych rządów zbieżniości zgadzają się z
+wartościami przewidywanymi przez teorię dla metody prostokątów oraz
+dla metody trapezów wynoszącą $\approx 2.00$\\
+Wartość dla metody \textit{Simpson}'a nie zgadza się z
+wartością teoretyczną równą 4.
 
 \section*{Zadanie 2.}
 \textbf{Oblicz wartość całki $$ \int_{0}^{1} \frac{4}{1+x^2} \,dx $$
@@ -52,11 +71,6 @@ Wykres przedstawiający porównanie prawdziwych wartości funkcji
 
 
 \subsection*{Wnioski}
-\null\quad W zadaniu 1, błąd względny był najmniejszy ($\approx0.022$) dla $m=4$, co nie
-zgadza się z odpowiednio najmniejszą wartością $AIC_c$ dla $m=2$. Druga najmniejsza wartość
-błędu jest przyjmowana dla $m=2$. \\
-\null\quad W zadaniu 2, metoda aproksymacji średniokwadratowej ciągłej
-jest tańsza obliczeniowo od aproksymacji jednostajnej.
-
+\null\quad 
 
 \end{document}
