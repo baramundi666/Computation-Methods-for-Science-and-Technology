@@ -5,48 +5,51 @@
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage[utf8]{inputenc}
+\usepackage{amsmath}
 
 
 \title{%
-Laboratorium 6\\
-  \huge Kwadratury}
+Laboratorium 8\\
+  \huge Rozwiązywanie równań nieliniowych}
 \author{Mateusz Król}
-\date{25/04/2024 r.}
+\date{07/05/2024 r.}
 
 \begin{document}
 \maketitle
 
  
 \section*{Zadanie 1.}
-\textbf{Wiadomo, że $$ \int_{0}^{1} \frac{4}{1+x^2} \,dx = \pi.$$
-\quad
-Powyższą równość można wykorzystać do obliczenia przybliżonej
-wartości $\pi$ poprzez całkowanie numeryczne. \\
+\textbf{Dla poniższych funkcji i punktów początkowych metoda 
+\textit{Newton}'a
+zawodzi. Wyjaśnij dlaczego. Następnie znajdź pierwiastki.
+$$f_1(x) = x^3-5x,\ x_0=1$$
+$$f_2(x) = x^3-3x+1,\ x_0=1$$
+$$f_3(x) = 2-x^5,\ x_0=0.01$$
+$$f_4(x) = x^4-4.29x^2-5.29,\ x_0=0.8$$} \\
 \null\quad
-Oblicz wartość powyższej całki, korzystając ze
-złożonych kwadratur otwartej prostokątów (ang. mid-point rule), 
-trapezów i Simpsona.}
-\newpage
-Wykres błędów względnych w zależności od liczby ewaluacji
-funkcji podcałkowej dla kwadratury prostokątów, kwadratury trapezów,
-kwadratury \textit{Simpson}'a:
-\begin{figure}[H]
-  \includegraphics[width=\linewidth]{figures/quad.png}
-\end{figure}
-Wykres błędów względnych dla kwadratury trapezów i kwadratury \textit{Simpson}'a
-pokrywa się.
-\\\\
-\null\quad
-Z wykresu można odczytać, że zniżanie kroku poniżej $h \approx 10^{-7}$, 
-nie zmniejsza już błędu kwadratury prostokątów. \\
-Ten wynik zgadza się z wynikiem z \textit{Laboratorium 1}, w którym
-wyznaczone $h_{min}$ wyniosło $10^{-6}$, $10^{-8}$.
+Wykorzystałem funkcję \textit{scipy.optimize.newton} z modułu
+\textit{SciPy}. \\\\
+Dla funkcji $f_1$ metoda \textit{Newton}'a działa - zwraca prawdziwy
+pierwiastek ($\approx 4.7 \cdot 10^{-24} \approx 0$). W celu zwrócenia
+innego pierwiastka, możnaby zmienić wartość początkową na bliższą
+odpowiedniej wartości (np. $2$). \\\\
+Dla reszty funkcji metoda \textit{Newton}'a nie działa: \\\\
+Dla funkcji $f_2$ odpowiednim $x_0$ byłoby $1.5$, gdyż wartość $1$ jest
+ekstremum lokalnym. \\
+Dla funkcji $f_3$ lepszym wyborem $x_0$ byłoby $1.1$, gdyż wartość
+$0.01$ jest zbyt blisko 0, gdzie funkcja jest na tyle stroma, że
+wartość przybliżana zbyt wolno zbiega do prawdziwego pierwiastka. \\
+Dla funkcji $f_3$ odpowiednim $x_0$ byłoby $2.0$ - wartość bliżej 
+prawdziwego pierwiastka. \\\\
 
 \section*{Zadanie 2.}
-\textbf{Oblicz wartość całki $$ \int_{0}^{1} \frac{4}{1+x^2} \,dx $$
-metodą Gaussa-Legendre’a. Narysuj wykres wartości bezwzględnej
-błędu względnego w zależności od liczby ewaluacji funkcji
-podcałkowej, n + 1.}
+\textbf{Dane jest równanie: $$f(x)=x^2-3x+2=0$$
+Każda z następujących funkcji definiuje równoważny schemat iteracyjny:
+$$g_1(x)=\frac{(x^2+2)}{3}$$
+$$g_2(x)=\sqrt[]{3x-2}$$
+$$g_3(x)=3-\frac{2}{x}$$
+$$g_4(x)=\frac{(x^2-2)}{2x-3}.$$
+}
 \newpage
 Wykres przedstawiający porównanie prawdziwych wartości funkcji 
 
