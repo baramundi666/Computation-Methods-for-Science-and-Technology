@@ -18,40 +18,54 @@ Laboratorium 7\\
 
  
 \section*{Zadanie 1.}
-\textbf{Wiadomo, że $$ \int_{0}^{1} \frac{4}{1+x^2} \,dx = \pi.$$
-\quad
-Powyższą równość można wykorzystać do obliczenia przybliżonej
-wartości $\pi$ poprzez całkowanie numeryczne. \\
-\null\quad
-Oblicz wartość powyższej całki, korzystając ze
-złożonych kwadratur otwartej prostokątów (ang. mid-point rule), 
-trapezów i Simpsona.}
+\textbf{Oblicz wartość całki z poprzedniego laboratorium
+$$ \int_{0}^{1} \frac{4}{1+x^2} \,dx = \pi.$$
+korzystając z:\\
+(a) kwadratur adaptacyjnych trapezów,\\
+(b) kwadratur adaptacyjnych Gaussa-Kronroda.\\\\
+Dla każdej metody narysuj wykres wartości bezwzględnej błędu względnego w
+zależności od liczby ewaluacji funkcji podcałkowej. Wyniki dodaj do wykresu
+uzyskanego w poprzednim laboratorium.}
 \newpage
 Wykres błędów względnych w zależności od liczby ewaluacji
-funkcji podcałkowej dla kwadratury prostokątów, kwadratury trapezów,
-kwadratury \textit{Simpson}'a:
+funkcji podcałkowej:
 \begin{figure}[H]
-  \includegraphics[width=\linewidth]{figures/quad.png}
+  \includegraphics[width=\linewidth]{figures/quad_f.png}
 \end{figure}
-Wykres błędów względnych dla kwadratury trapezów i kwadratury \textit{Simpson}'a
-pokrywa się.
+Wykres błędów względnych dla kwadratury \textit{Gaussa-Kronroda}
+jest stale równy 0.
 \\\\
 \null\quad
-Z wykresu można odczytać, że zniżanie kroku poniżej $h \approx 10^{-7}$, 
-nie zmniejsza już błędu kwadratury prostokątów. \\
-Ten wynik zgadza się z wynikiem z \textit{Laboratorium 1}, w którym
-wyznaczone $h_{min}$ wyniosło $10^{-6}$, $10^{-8}$.
 
 \section*{Zadanie 2.}
-\textbf{Oblicz wartość całki $$ \int_{0}^{1} \frac{4}{1+x^2} \,dx $$
-metodą Gaussa-Legendre’a. Narysuj wykres wartości bezwzględnej
-błędu względnego w zależności od liczby ewaluacji funkcji
-podcałkowej, n + 1.}
+\textbf{Powtórz obliczenia z poprzedniego oraz dzisiejszego laboratorium
+dla całek:
+$$ \int_{0}^{1} \sqrt[]{x}\cdot \ln(x) \,dx $$
+$$ \int_{0}^{1} \frac{1}{(x-0.3)^2 + a} + \frac{1}{(x-0.9)^2 + b} - 6\,dx $$
+, gdzie $a=0.001$, $b=0.004$.}
 \newpage
-Wykres przedstawiający porównanie prawdziwych wartości funkcji 
+Wykres błędów względnych w zależności od liczby ewaluacji
+funkcji podcałkowej dla funkcji $f(x) = \sqrt[]{x}\cdot \ln(x)$:
+\begin{figure}[H]
+  \includegraphics[width=\linewidth]{figures/quad_g.png}
+\end{figure}
+
+Wykres błędów względnych w zależności od liczby ewaluacji
+funkcji podcałkowej dla funkcji \space
+$f(x) = \frac{1}{(x-0.3)^2 + 0.001} + \frac{1}{(x-0.9)^2 + 0.004} - 6$:
+\begin{figure}[H]
+  \includegraphics[width=\linewidth]{figures/quad_h.png}
+\end{figure}
 
 
 \subsection*{Wnioski}
-\null\quad 
+\null\quad Dla każdej z badanej funkcji, metoda \textit{Gaussa-Kronroda} od
+pewnej wartości liczby ewaluacji funkcji, przyjmuje najmniejszą wartość
+względnego spośród wszystkich metod. \\
+\null\quad W pierwszym zadaniu wartość błędu dla funkcji
+$f(x)=\frac{4}{1+x^2}$ wyniósł 0, korzystając z wartości $\pi = numpy.pi$.\\
+Oznacza to, że dokładność metody dla odpowiednich wartości
+liczby ewaluacji funkcji (w tym przypadku stale równym 63), 
+wynosi więcej niż 15 miejsc po przecinku.
 
 \end{document}
