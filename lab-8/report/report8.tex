@@ -37,7 +37,7 @@ Dla reszty funkcji metoda \textit{Newton}'a nie działa: \\\\
 Dla funkcji $f_2$ odpowiednim $x_0$ byłoby $1.5$, gdyż wartość $1$ jest
 ekstremum lokalnym. \\
 Dla funkcji $f_3$ lepszym wyborem $x_0$ byłoby $1.1$, gdyż wartość
-$0.01$ jest zbyt blisko 0, gdzie funkcja jest na tyle stroma, że
+$0.01$ jest zbyt blisko 0, gdzie funkcja jest na tyle płaska, że
 wartość przybliżana zbyt wolno zbiega do prawdziwego pierwiastka. \\
 Dla funkcji $f_3$ odpowiednim $x_0$ byłoby $2.0$ - wartość bliżej 
 prawdziwego pierwiastka. \\\\
@@ -50,8 +50,32 @@ $$g_2(x)=\sqrt[]{3x-2}$$
 $$g_3(x)=3-\frac{2}{x}$$
 $$g_4(x)=\frac{(x^2-2)}{2x-3}.$$
 }
-\newpage
-Wykres przedstawiający porównanie prawdziwych wartości funkcji 
+\\\\
+Tabela z wartościami rzędów zbieżności schematów iteracyjnych 
+odpowiadających funkcjom $g_i(x)$:
+\begin{center}
+  \begin{tabular}{c c} 
+   Function & Order of convergence\\
+   $g_1$ & $\approx 1.33$\\
+   $g_2$ & $\approx 0.82$\\
+   $g_3$ & $\approx 0.67$\\
+   $g_4$ & $\approx 0.67$
+  \end{tabular}
+\end{center}
+Wykres przedstawiający porównanie wartości błędów względnych w zależności od liczby
+iteracji:
+\begin{figure}[H]
+  \includegraphics[width=\linewidth]{figures/iteration.png}
+\end{figure}
+
+
+\section*{Zadanie 3.}
+\textbf{Napisz schemat iteracji wg metody Newtona dla każdego z nastę-
+pujących równań nieliniowych:}
+
+\section*{Zadanie 4.}
+\textbf{Napisz schemat iteracji wg metody Newtona dla następującego
+układu równań nieliniowych:}
 
 
 \subsection*{Wnioski}

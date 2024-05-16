@@ -27,6 +27,10 @@ Dla każdej metody narysuj wykres wartości bezwzględnej błędu względnego w
 zależności od liczby ewaluacji funkcji podcałkowej. Wyniki dodaj do wykresu
 uzyskanego w poprzednim laboratorium.}
 \newpage
+Wykres funkcji $f(x) = \frac{4}{1+x^2}$:
+\begin{figure}[H]
+  \includegraphics[width=\linewidth]{figures/f.png}
+\end{figure}
 Wykres błędów względnych w zależności od liczby ewaluacji
 funkcji podcałkowej:
 \begin{figure}[H]
@@ -44,10 +48,19 @@ $$ \int_{0}^{1} \sqrt[]{x}\cdot \ln(x) \,dx $$
 $$ \int_{0}^{1} \frac{1}{(x-0.3)^2 + a} + \frac{1}{(x-0.9)^2 + b} - 6\,dx $$
 , gdzie $a=0.001$, $b=0.004$.}
 \newpage
+Wykres funkcji $f(x) = \sqrt[]{x}\cdot \ln(x)$:
+\begin{figure}[H]
+  \includegraphics[width=\linewidth]{figures/g.png}
+\end{figure}
 Wykres błędów względnych w zależności od liczby ewaluacji
 funkcji podcałkowej dla funkcji $f(x) = \sqrt[]{x}\cdot \ln(x)$:
 \begin{figure}[H]
   \includegraphics[width=\linewidth]{figures/quad_g.png}
+\end{figure}
+
+Wykres funkcji $f(x) = \frac{1}{(x-0.3)^2 + 0.001} + \frac{1}{(x-0.9)^2 + 0.004} - 6$:
+\begin{figure}[H]
+  \includegraphics[width=\linewidth]{figures/h.png}
 \end{figure}
 
 Wykres błędów względnych w zależności od liczby ewaluacji
@@ -66,6 +79,9 @@ względnego spośród wszystkich metod. \\
 $f(x)=\frac{4}{1+x^2}$ wyniósł 0, korzystając z wartości $\pi = numpy.pi$.\\
 Oznacza to, że dokładność metody dla odpowiednich wartości
 liczby ewaluacji funkcji (w tym przypadku stale równym 63), 
-wynosi więcej niż 15 miejsc po przecinku.
+wynosi więcej niż 15 miejsc po przecinku. \\
+\null\quad Dla drugiej badanej funkcji $f(x) = \sqrt[]{x}\cdot \ln(x)$,
+wartości błędu względnego okazały się największe dla odpowiednich liczb ewaluacji
+funkcji podcałkowej.
 
 \end{document}
