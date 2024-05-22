@@ -1,1 +1,0 @@
-cykle, płaska 3, g_4 = 0, podwajanie
