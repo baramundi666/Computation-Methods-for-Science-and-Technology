@@ -27,23 +27,19 @@ $$f_2(x) = x^3-3x+1,\ x_0=1$$
 $$f_3(x) = 2-x^5,\ x_0=0.01$$
 $$f_4(x) = x^4-4.29x^2-5.29,\ x_0=0.8$$} \\
 \null\quad
-Wykorzystałem funkcję \textit{scipy.optimize.newton} z modułu
-\textit{SciPy}. \\\\
-Dla funkcji $f_1$ metoda \textit{Newton}'a działa - zwraca prawdziwy
-pierwiastek ($\approx 4.7 \cdot 10^{-24} \approx 0$). W celu zwrócenia
-innego pierwiastka, możnaby zmienić wartość początkową na bliższą
-odpowiedniej wartości (np. $2$). \\\\
-Dla reszty funkcji metoda \textit{Newton}'a nie działa: \\\\
+Wykorzystałem własną funkcję \textit{newton} implementującą schemat iteracyjny. \\
+Dla funkcji $f_1$ metoda \textit{Newton}'a nie działa - wartości oscylują
+w cyklu między wartościami 1 i -1. W celu zwrócenia
+prawdziwego pierwiastka, możnaby zmienić wartość początkową na inną (np. $2$). \\\\
 Dla funkcji $f_2$ odpowiednim $x_0$ byłoby $1.5$.\\
 Pochodna funkcji dla $x_0=1$ przyjmuje wartość $0$,
 przez co metoda \textit{Newton}'a nie ma w tym przypadku
 zastosowania. \\
-Dla funkcji $f_3$ lepszym wyborem $x_0$ byłoby $1.1$, gdyż metoda \textit{scipy.optimize.newton},
-niezależnie od przekazanej do funkcji parametru liczby iteracji, stale pozostaje w punkcie 0.01. \\
-Innym rozwiązaniem jest przekazanie do funkcji wartości parametru \textit{tol} o przykładowej
-wartośći 0.01. \\
-Dla funkcji $f_4$ odpowiednim $x_0$ byłoby $2.0$ - wartość bliżej 
-prawdziwego pierwiastka. \\\\
+Dla funkcji $f_3$ lepszym wyborem $x_0$ byłoby $1.1$. \\
+Dla $x_0=0.1$ wartość pochodnej jest zbyt blisko zera. \\
+Dla funkcji $f_4$ wykorzystana implementacja
+metody \textit{Newton}'a zwróciła prawdziwą wartość pierwiastka $\approx -2.29$.\\\\
+
 
 \section*{Zadanie 2.}
 \textbf{Dane jest równanie: $$f(x)=x^2-3x+2=0$$
@@ -80,10 +76,20 @@ iteracji:
 Wartości bezwględne pochodnych funkcji: $g_2$, $g_3$, $g_4$ w punkcie $x_0=2$, wynoszą mniej od 1, z czego
 powinna wynikać zbieżność odpowiadających im schematów iteracyjnych,
 co pokrywa się z danymi odczytanymi z wykresu. \\\\
+Tabela przedstawiająca wartości rzędów zbieżności poszczególnych schematóœ
+iteracyjnych:
+\begin{center}
+  \begin{tabular}{c c} 
+   Function & Rate of convergence\\
+   $g_1$ & $\approx 0.71$\\
+   $g_2$ & $\approx 1$\\
+   $g_3$ & $\approx 1$\\
+   $g_4$ & $\approx 2$
+  \end{tabular}
+\end{center}
 \null\quad
 Wartość pochodnej $g_4$ w punkcie $x_0$ wynosi 0, co świadczy o conajmniej kwadratowej zbieżności
 schematu iteracyjnego, co zgadza się z obliczoną wartością rzędu zbieżności $\approx 1.9997$.
-
 
 
 \section*{Zadanie 3.}
@@ -93,13 +99,12 @@ $$x^3-2x-5=0$$
 $$e^{-x} = x$$
 $$x\cdot\sin(x) = 1$$}
 
-\begin{figure}[H]
-  \includegraphics[width=\linewidth]{figures/comparison.png}
-\end{figure}
 
 Metoda \textit{Newton}'a posiada kwadratowy rząd zbieżności, więc za każdą iteracją,
 wartość błędu dwukrotnie maleje, a co za tym idzie, dokładność na kolejnych bitach zwiększa się dwukrotnie.\\
-Można to również wywnioskować na podstawie zamieszczonego wykresu.
+Zaczynając od dokładności na 4 bitach, w celu uzyskania dokładności 24-bitową potrzeba wykonać
+3 iteracje ($4\cdot 2^3 = 32 > 24$), a 53 bitach - 4 iteracje ($4\cdot 2^4 = 64 > 53$).
+
 
 \section*{Zadanie 4.}
 \textbf{Napisz schemat iteracji wg metody Newtona dla następującego

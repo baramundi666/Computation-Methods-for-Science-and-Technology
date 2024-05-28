@@ -1,5 +1,0 @@
-cykle w 1 zad - oscylacja pierwiastka,
-wnioski inne - ze pochodna to 0 i dlatego nie dziala newton
-
-w 2 - tabelka z wartosciami rzedow zbieznosci
-w 3 - podac potrzebna liczbe iteracji
