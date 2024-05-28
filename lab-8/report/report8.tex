@@ -34,13 +34,15 @@ pierwiastek ($\approx 4.7 \cdot 10^{-24} \approx 0$). W celu zwrócenia
 innego pierwiastka, możnaby zmienić wartość początkową na bliższą
 odpowiedniej wartości (np. $2$). \\\\
 Dla reszty funkcji metoda \textit{Newton}'a nie działa: \\\\
-Dla funkcji $f_2$ odpowiednim $x_0$ byłoby $1.5$, gdyż wartość $1$ jest
-ekstremum lokalnym. \\
+Dla funkcji $f_2$ odpowiednim $x_0$ byłoby $1.5$.\\
+Pochodna funkcji dla $x_0=1$ przyjmuje wartość $0$,
+przez co metoda \textit{Newton}'a nie ma w tym przypadku
+zastosowania. \\
 Dla funkcji $f_3$ lepszym wyborem $x_0$ byłoby $1.1$, gdyż metoda \textit{scipy.optimize.newton},
 niezależnie od przekazanej do funkcji parametru liczby iteracji, stale pozostaje w punkcie 0.01. \\
 Innym rozwiązaniem jest przekazanie do funkcji wartości parametru \textit{tol} o przykładowej
 wartośći 0.01. \\
-Dla funkcji $f_3$ odpowiednim $x_0$ byłoby $2.0$ - wartość bliżej 
+Dla funkcji $f_4$ odpowiednim $x_0$ byłoby $2.0$ - wartość bliżej 
 prawdziwego pierwiastka. \\\\
 
 \section*{Zadanie 2.}
