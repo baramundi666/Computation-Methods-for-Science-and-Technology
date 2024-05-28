@@ -33,31 +33,29 @@ $$y_2'' = -GM\cdot \frac{y_2}{(y_1^2+y_2^2)^{3/2}}$$
 Układy równań różniczkowych:\\
 (a) równanie \textit{Van der Pol}'a:\\\\
 Podstawienia:
-    $$a=y$$
-    $$b=y'$$
+    $$y_1=y$$
+    $$y_2=y'$$
 Układ równań:
-    $$a'=b$$
-    $$b'=b(1-b^2)$$
+    $$y_1'=y_2$$
+    $$y_2'=y_2(1-y_2^2)$$
 (b) równanie \textit{Blasius}'a:\\\\
 Podstawienia:
-    $$a=y$$
-    $$b=y'$$
-    $$c=y''$$
+    $$y_1=y$$
+    $$y_2=y'$$
+    $$y_3=y''$$
 Układ równań:
-    $$a'=b$$
-    $$b'=c$$
-    $$c'=-ac$$
+    $$y_1'=y_2$$
+    $$y_2'=y_3$$
+    $$y_3'=-y_1y_3$$
 (c) II zasada dynamiki \textit{Newton}'a dla problemu dwóch ciał:\\\\
 Podstawienie:
-    $$a=y_1$$
-    $$b=y_2$$
-    $$c=y_1'$$
-    $$d=y_2'$$
+    $$y_3=y_1'$$
+    $$y_4=y_2'$$
 Układ równań:
-    $$a'=c$$
-    $$b'=d$$
-    $$c'=-GM\cdot \frac{a}{(a^2+b^2)^{3/2}}$$
-    $$d'=-GM\cdot \frac{b}{(a^2+b^2)^{3/2}}$$
+    $$y_1'=y_3$$
+    $$y_2'=y_4$$
+    $$y_3'=-GM\cdot \frac{y_1}{(y_1^2+y_2^2)^{3/2}}$$
+    $$y_4'=-GM\cdot \frac{y_2}{(y_1^2+y_2^2)^{3/2}}$$
 
 \section*{Zadanie 2.}
 \textbf{Dane jest równanie różniczkowe zwyczajne
@@ -88,9 +86,9 @@ Są to metody: Implicit Euler, Trapezoidal, RK4.\\\\
 Jawna metoda \textit{Euler}'a jest niestabilna numerycznie dla zadanego
 parametru $h=0.5$.\\
 Wzór iteracyjny:
-$$y_{n+1} = y_n + h_n\cdot (-\lambda y_n)$$
+$$y_{n+1} = y_n + h_n\lambda y_n$$
 Wartość przybliżonego rozwiązania tą metodą dla $t=0.5$ wynosi
-$y=3.5$.\\
+$y=-1.5$.\\
 
 Wykres wartości rozwiązania wykorzystując jawną metodę \textit{Euler}'a:
 \begin{figure}[H]
