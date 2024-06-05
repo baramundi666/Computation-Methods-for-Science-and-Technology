@@ -111,7 +111,7 @@ Wykres wartości rozwiązania wykorzystując niejawną metodę \textit{Euler}'a:
 \textbf{Model \textit{Kermack}’a-\textit{McKendrick}’a przebiegu epidemii w populacji
 opisany jest układem równań różniczkowych:
 $$S'=-\beta I S$$
-$$I'=-\beta I S - \gamma I$$
+$$I'=\beta I S - \gamma I$$
 $$R'=\gamma I$$
 , gdzie: \\
 S reprezentuje liczbę osób zdrowych, podatnych na zainfekowanie,\\
@@ -133,6 +133,43 @@ Założenia modelu:
 \end{figure}
 }
 
+Wykres modelu \textit{Kermack}’a-\textit{McKendrick}'a przebiegu epidemii
+wykorzystując niejawną metodę \textit{Euler}'a:
+\begin{figure}[H]
+  \includegraphics[width=\linewidth]{figures/SIR_expl.png}
+\end{figure}
+
+Wykres modelu \textit{Kermack}’a-\textit{McKendrick}'a przebiegu epidemii
+wykorzystując jawną metodę \textit{Euler}'a:
+\begin{figure}[H]
+  \includegraphics[width=\linewidth]{figures/SIR_impl.png}
+\end{figure}
+
+Wykres modelu \textit{Kermack}’a-\textit{McKendrick}'a przebiegu epidemii
+wykorzystując metodę \textit{Rungego Kutty}:
+\begin{figure}[H]
+  \includegraphics[width=\linewidth]{figures/SIR_rk4.png}
+\end{figure}
+
+Wykres funkcji $S(t)+I(t)+R(t)$ dla każdej z metod:
+\begin{figure}[H]
+  \includegraphics[width=\linewidth]{figures/invariant.png}
+\end{figure}
+
+$$L_1(\theta) = \sum_{t=0}^{T} (I_t - \hat{I_t})^2$$
+$$L_2(\theta) = -\sum_{t=0}^{T} I_t\cdot \ln(\hat{I_t}) + 
+\sum_{t=0}^{T} \hat{I_t}$$
+
+Tabela przedstawiająca wyznaczone wartości współczynników $\beta$ i $\gamma$
+korzystając z metody \textit{Rungego Kutty} dla różnych
+funkcji kosztu (przyjmując $N=500$):
+\begin{center}
+  \begin{tabular}{c c c c} 
+   Cost function & $\beta$ & $\gamma$ & $R_0 = \frac{\beta}{\gamma}$\\
+   $L_1$ & $\approx1.568$ & $\approx0.283$ & $\approx5.547$\\
+   $L_2$ & $\approx1.583$ & $\approx0.330$ & $\approx4.811$
+  \end{tabular}
+\end{center}
 
 
 \end{document}
