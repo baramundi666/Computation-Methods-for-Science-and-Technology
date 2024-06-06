@@ -90,5 +90,5 @@ for i in range(15001):
         plt.plot(t_test[:,0], u[:,0], label="PINN solution", color="tab:green")
         plt.title(f"Training step {i}")
         plt.legend()
-        plt.show()
+        plt.savefig('a')
 
