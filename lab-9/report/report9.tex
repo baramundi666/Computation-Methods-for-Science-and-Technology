@@ -170,6 +170,26 @@ funkcji kosztu (przyjmując $N=500$):
    $L_2$ & $\approx1.583$ & $\approx0.330$ & $\approx4.811$
   \end{tabular}
 \end{center}
-
+\newpage
+\section*{Wnioski}
+\null\quad
+W \textbf{Zadaniu 1.}, dla trzech równań / układów równań różniczkowych
+wyższego rzędu niż pierwszego, możliwe było doprowadzenie problemu do rozwiązania
+układu równań różniczkowych pierwszego rzędu.\\
+Powyższa praktyka sprawdza się dla dowolnego układu równań różniczkowych $n$-tego rzędu.\\\\
+\null\quad 
+W \textbf{Zadaniu 2.}, zgodnie z przewidywaniami (na podstawie przedstawionej tabelki z
+wartościami czynników amplifikacji), jawna metoda \textit{Euler}'a okazała sie być niestabilna
+numerycznie. Wykres rozwiązania otrzymanego tą metodą nie zgadza się z wykresem rozwiązania analitycznego.\\
+Wykres rozwiązania otrzymanego niejawna metodą \textit{Euler}'a, jako że jest stabilna numerycznie, 
+zgadza się z rozwiązaniem analitycznym zadanego równania różniczkowego.\\\\
+\null\quad
+W \textbf{Zadaniu 3.}, Model \textit{Kermack}’a-\textit{McKendrick}'a skutecznie opisuje dynamikę
+rozprzestrzeniania się epidemii.\\
+Wykres funkcji $S(t) + I(t) + R(t)$ jest stale równy $N$, co zgadza się
+założeniem, że całkowita populacja jest stała.\\ Metoda $RK4$ jest uznawana za najlepszą z tych
+testowanych, ze względu na błąd lokalny rzędu zaledwie $O(h^5)$, a globalny $O(h^4)$.\\
+Obliczone wartości $R_0$ większe niż 1 sugeruja, że choroba jest zdolna do rozprzestrzeniania
+się w populacji co zgadza się zamieszczonymi wykresami. \\
 
 \end{document}
