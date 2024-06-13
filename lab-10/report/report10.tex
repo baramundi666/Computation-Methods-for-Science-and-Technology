@@ -34,84 +34,66 @@ Analityczna postać rozwiązania równania z warunkiem początkowym
 jest następująca:
 $$ u(x) = \frac{1}{\omega} \sin(\omega x) $$
 Rozwiąż powyższe zagadnienie początkowe. Do rozwiązania użyj sieci neuronowych
-PINN (ang. \textit{Physics-informed Neural Network} ) 
-Można wykorzystać szablon w pytorch-u lub bibliotekę DeepXDE.
-}\\\\
-
-
-\section*{Zadanie 2.}
-\textbf{Dane jest równanie różniczkowe zwyczajne
-$$y'=-5y$$
-z warunkiem początkowym $y(0) = 1$. Równanie rozwiązujemy numerycznie z
-krokiem $h = 0.5$.
-}\\\\
-
-Poniższa tabela przedstawia wartości czynników amplifikacji dla zadanego
-równania różniczkowego, dla każdej z omówionych metod.\\
-Wartości te świadczą o numerycznej stabilności tych metod.
-
-\begin{center}
-  \begin{tabular}{c c} 
-   Method & Amplification factor\\
-   Explicit Euler & $-1.5$\\
-   Implicit Euler & $\approx 0.286$\\
-   Trapezoidal  & $\approx -0.111$\\
-   Modified Euler & $1.625$\\
-   RK4 & $\approx 0.648$
-  \end{tabular}
-\end{center}
-
-Metody stabilne numerycznie dla zadanego równania to te, dla których
-wartość bezwzględna z czynnika amplifikacji jest mniejsza od 1.\\
-Są to metody: Implicit Euler, Trapezoidal, RK4.\\\\
-
-Jawna metoda \textit{Euler}'a jest niestabilna numerycznie dla zadanego
-parametru $h=0.5$.\\
-Wzór iteracyjny:
-$$y_{n+1} = y_n + h_n\lambda y_n$$
-Wartość przybliżonego rozwiązania tą metodą dla $t=0.5$ wynosi
-$y=-1.5$.\\
-
-
-Niejawna metoda \textit{Euler}'a jest stabilna numerycznie dla zadanego
-parametru $h=0.5$.\\
-Wzór iteracyjny:
-$$y_{n+1} = \frac{y_n}{1 - h_n\lambda}$$
-Wartość przybliżonego rozwiązania tą metodą dla $t=0.5$ wynosi
-$y\approx 0.286$.\\
-
-
-
-\section*{Zadanie 3.}
-\textbf{Model \textit{Kermack}’a-\textit{McKendrick}’a przebiegu epidemii w populacji
-opisany jest układem równań różniczkowych:
-$$S'=-\beta I S$$
-$$I'=\beta I S - \gamma I$$
-$$R'=\gamma I$$
-, gdzie: \\
-S reprezentuje liczbę osób zdrowych, podatnych na zainfekowanie,\\
-I reprezentuje liczbę osób zainfekowanych i roznoszących infekcję,\\
-R reprezentuje liczbę osób ozdrowiałych.\\\\
-Parametr $\beta$ reprezentuje współczynnik zakaźności (ang. \textit{transmission rate}).\\
-Parametr $\gamma$ reprezentuje współczynnik wyzdrowień (ang. \textit{recovery rate}).\\
-Wartość $\frac{1}{\gamma}$ reprezentuje średni czas choroby. \\\\
-Założenia modelu:
+PINN (ang. \textit{Physics-informed Neural Network} )
+Można wykorzystać szablon w pytorch-u lub bibliotekę DeepXDE.\\\\
+Warstwa wejściowa sieci posiada 1 neuron, reprezentujący zmienną $x$.\\
+Warstwa wyjściowa także posiada 1 neuron, reprezentujący zmienną $\hat{u}(x)$.\\
+Uczenie trwa przez $50 000$ kroków algorytmem \textit{Adam} ze stałą uczenia równą $0.001$.
+Jako funkcję aktywacji przyjmij tangens hiperboliczny, $\tanh$.
 }
+\newpage
 
-$$L_1(\theta) = \sum_{t=0}^{T} (I_t - \hat{I_t})^2$$
-$$L_2(\theta) = -\sum_{t=0}^{T} I_t\cdot \ln(\hat{I_t}) + 
-\sum_{t=0}^{T} \hat{I_t}$$
+W poniższych rozwiązaniach wykorzystałem bibliotekę \textit{DeepXDE}.\\
 
-Tabela przedstawiająca wyznaczone wartości współczynników $\beta$ i $\gamma$
-korzystając z metody \textit{Rungego Kutty} dla różnych
-funkcji kosztu (przyjmując $N=500$):
-\begin{center}
-  \begin{tabular}{c c c c} 
-   Cost function & $\beta$ & $\gamma$ & $R_0 = \frac{\beta}{\gamma}$\\
-   $L_1$ & $\approx1.568$ & $\approx0.283$ & $\approx5.547$\\
-   $L_2$ & $\approx1.583$ & $\approx0.330$ & $\approx4.811$
-  \end{tabular}
-\end{center}
+Wykres rozwiązania zadanego równania różniczkowego dla danych modelu:\\
+\begin{itemize}
+  \item $\omega = 1$\\
+  \item 2 warstwy ukryte, 16 neuronów w każdej warstwie\\
+  \item liczba punktów treningowych: $200$\\
+  \item liczba punktów testowych: $1000$
+\end{itemize}
+
+\begin{figure}[H]
+  \includegraphics[width=\linewidth]{figures/first.png}
+\end{figure}
+
+
+Wykres rozwiązania zadanego równania różniczkowego dla danych modelu:\\
+\begin{itemize}
+  \item $\omega = 15$\\
+  \item 2 warstwy ukryte, 16 neuronów w każdej warstwie\\
+  \item liczba punktów treningowych: $3000$\\
+  \item liczba punktów testowych: $5000$
+\end{itemize}
+
+\begin{figure}[H]
+  \includegraphics[width=\linewidth]{figures/second1.png}
+\end{figure}
+
+Wykres rozwiązania zadanego równania różniczkowego dla danych modelu:\\
+\begin{itemize}
+  \item $\omega = 15$\\
+  \item 4 warstwy ukryte, 64 neuronów w każdej warstwie\\
+  \item liczba punktów treningowych: $3000$\\
+  \item liczba punktów testowych: $5000$
+\end{itemize}
+
+\begin{figure}[H]
+  \includegraphics[width=\linewidth]{figures/second2.png}
+\end{figure}
+
+Wykres rozwiązania zadanego równania różniczkowego dla danych modelu:\\
+\begin{itemize}
+  \item $\omega = 15$\\
+  \item 5 warstw ukrytych, 128 neuronów w każdej warstwie\\
+  \item liczba punktów treningowych: $3000$\\
+  \item liczba punktów testowych: $5000$
+\end{itemize}
+
+\begin{figure}[H]
+  \includegraphics[width=\linewidth]{figures/second3.png}
+\end{figure}
+
 
 
 \end{document}
