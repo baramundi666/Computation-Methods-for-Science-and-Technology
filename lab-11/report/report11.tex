@@ -55,32 +55,46 @@ $$H = \begin{bmatrix}
 $$det(H(0, 0)) = -16 < 0$$
 Punkt $(0, 0)$ jest punktem siodłowym.
 $$det(H(1, 1)) = 128 > 0$$
+
 $$\frac{\partial^2 f_1}{\partial x^2}(1, 1) = 12 > 0$$
 Punkt $(1, 1)$ jest minimum lokalnym.
+
 $$det(H(-1, -1)) = 128 > 0$$
-$$\frac{\partial^2 f_1}{\partial x^2}(-1, -1) = 12 > 0$$
+$$\frac{\partial^2 f_2}{\partial x^2}(-1, -1) = 12 > 0$$
 Punkt $(-1, -1)$ jest minimum lokalnym. \\
 
 Dla funkcji $f_3$:
 $$\frac{\partial f_3}{\partial x} = 6x^2-6x-12xy+6y^2+6y = 0$$
 $$\frac{\partial f_3}{\partial y} = -6x^2+6xy+6x = 0$$
 Punkty krytyczne:
-$$(x, y) = (0, 0), (t, t-1) \text{, } t\in \mathbb{R}$$
+$$(x, y) = (0, 0), (-1, -1), (0, -1), (1, 0) $$
 Macierz Hessego:
 $$H = \begin{bmatrix}
   12x-6-12y & -12x+12y+6 \\
-  -12x+12y+6 & 0 
+  -12x+12y+6 & 12x
 \end{bmatrix}$$
+
 $$det(H(0, 0)) = -36 < 0$$
 Punkt $(0, 0)$ jest punktem siodłowym. \\
-$$det(H(t, t-1)) = -36 < 0$$
-Punkty $(t, t-1) \text{, } t\in \mathbb{R}$ śa punktami siodłowymi. \\
+
+$$det(H(-1, -1)) = 36 > 0$$
+$$\frac{\partial^2 f_3}{\partial x^2}(-1, -1) = -6 < 0$$
+Punkt $(-1, -1)$ jest maksimum lokalnym  \\
+
+$$det(H(1, 0)) = 36 > 0$$
+$$\frac{\partial^2 f_3}{\partial x^2}(1, 0) = 6 > 0$$
+Punkt $(1, 0)$ jest minimum lokalnym. \\
+
+$$det(H(0, -1)) = -36 < 0$$
+Punkt $(0, -1)$ jest punktem siodłowym. \\
+
 
 Dla funkcji $f_4$:
 $$\frac{\partial f_4}{\partial x} = 4(x-y)^3 + 2x - 2 = 0$$
 $$\frac{\partial f_4}{\partial y} = -4(x-y)^3 -2y + 2 = 0$$
 Punkty krytyczne:
-$$(x, y) = (1, 1)$$
+$$(x, y) = (0, 0)$$
+
 Macierz Hessego:
 $$H = \begin{bmatrix}
   -12(x-y)^2 + 2 & -12(x-y)^2 \\
@@ -150,6 +164,28 @@ liczby iteracji:
 \end{figure}
 
 Wartości funkcji $F$ bardzo szybko maleją, wydają się zbiegać do wartości $\approx 70.78$.
+
+\section*{Wnioski}
+\null\quad
+W \textbf{Zadaniu 1.}: \\
+Funkcja $f_1$ nie posiada globalnego minimum ani maksimum na zbiorze $\mathbb{R}$,
+gdyż jej granice niewłaściwe są rozbieżne (funkcja może rosnąć lub maleć bez ograniczeń). \\
+Funkcja $f_2$ nie posiada globalnego maksimum na zbiorze $\mathbb{R}$. Globalne minimum wynosi $-2$ i 
+jest przyjmowane w punktach $(1, 1)$ oraz $(-1, -1)$. \\
+Funkcja $f_3$ nie posiada globalnego minimum ani maksimum na zbiorze $\mathbb{R}$,
+gdyż jej granice niewłaściwe są rozbieżne (funkcja może rosnąć lub maleć bez ograniczeń). \\
+Funkcja $f_4$ nie posiada globalnego minimum ani maksimum na zbiorze $\mathbb{R}$,
+gdyż jej granice niewłaściwe są rozbieżne (funkcja może rosnąć lub maleć bez ograniczeń). \\
+\null\quad
+W \textbf{Zadaniu 2.}: \\
+Wykorzystana metoda okazała się być skuteczna w zaproponowanym zastosowaniu - znajdywaniu przez robota
+ścieżki między przeszkodami. \\
+Spadek wzdłuż gradientu posiada różne wady, m.in. nie gwarantuje znalezienia maksimum globalnego, ale
+okazał się być odpowiedni przy wybranej konfiguracji problemu. \\
+Algorytm szukania ścieżki można by zmodyfikować: założyc stały parametr $\alpha$, co zmniejszyłoby
+złożoność obliczeniową problemu.
+
+
 
 
 
