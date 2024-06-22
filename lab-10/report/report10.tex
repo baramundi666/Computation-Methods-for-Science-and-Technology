@@ -54,9 +54,43 @@ Wykres rozwiązania zadanego równania różniczkowego dla danych modelu:\\
 \end{itemize}
 
 \begin{figure}[H]
-  \includegraphics[width=\linewidth]{figures/first.png}
+  \includegraphics[width=\linewidth]{figures/1.png}
 \end{figure}
 
+Wykres błędu rezydualnego obliczonego rozwiązania:\\
+
+\begin{figure}[H]
+  \includegraphics[width=\linewidth]{figures/1_residual.png}
+\end{figure}
+
+Wykres zmieniających się wartości funkcji kosztu danego modelu:
+(w zależności od $1000 \cdot \text{num of iterations}$)\\
+
+\begin{figure}[H]
+  \includegraphics[width=\linewidth]{figures/1_train.png}
+\end{figure}
+
+Analogiczne wykresy dla tych samych danych modelu, ale z \textit{Ansatz}'em:
+$$u(x) = \tanh(\omega x) \cdot NN(x) $$
+
+Wykres rozwiązania zadanego równania różniczkowego: \\
+
+\begin{figure}[H]
+  \includegraphics[width=\linewidth]{figures/1_ans.png}
+\end{figure}
+
+Wykres błędu rezydualnego obliczonego rozwiązania:\\
+
+\begin{figure}[H]
+  \includegraphics[width=\linewidth]{figures/1_ans_residual.png}
+\end{figure}
+
+Wykres zmieniających się wartości funkcji kosztu danego modelu:
+(w zależności od $1000 \cdot \text{num of iterations}$)\\
+
+\begin{figure}[H]
+  \includegraphics[width=\linewidth]{figures/1_ans_train.png}
+\end{figure}
 
 Wykres rozwiązania zadanego równania różniczkowego dla danych modelu:\\
 \begin{itemize}
@@ -67,7 +101,42 @@ Wykres rozwiązania zadanego równania różniczkowego dla danych modelu:\\
 \end{itemize}
 
 \begin{figure}[H]
-  \includegraphics[width=\linewidth]{figures/second1.png}
+  \includegraphics[width=\linewidth]{figures/2.png}
+\end{figure}
+
+Wykres błędu rezydualnego obliczonego rozwiązania:\\
+
+\begin{figure}[H]
+  \includegraphics[width=\linewidth]{figures/2_residual.png}
+\end{figure}
+
+Wykres zmieniających się wartości funkcji kosztu danego modelu:
+(w zależności od $1000 \cdot \text{num of iterations}$)\\
+
+\begin{figure}[H]
+  \includegraphics[width=\linewidth]{figures/2_train.png}
+\end{figure}
+
+Analogiczne wykresy dla tych samych danych modelu, ale z \textit{Ansatz}'em:
+$$u(x) = \tanh(\omega x) \cdot NN(x) $$
+
+Wykres rozwiązania zadanego równania różniczkowego: \\
+
+\begin{figure}[H]
+  \includegraphics[width=\linewidth]{figures/2_ans.png}
+\end{figure}
+
+Wykres błędu rezydualnego obliczonego rozwiązania:\\
+
+\begin{figure}[H]
+  \includegraphics[width=\linewidth]{figures/2_ans_residual.png}
+\end{figure}
+
+Wykres zmieniających się wartości funkcji kosztu danego modelu:
+(w zależności od $1000 \cdot \text{num of iterations}$)\\
+
+\begin{figure}[H]
+  \includegraphics[width=\linewidth]{figures/2_ans_train.png}
 \end{figure}
 
 Wykres rozwiązania zadanego równania różniczkowego dla danych modelu:\\
@@ -79,21 +148,60 @@ Wykres rozwiązania zadanego równania różniczkowego dla danych modelu:\\
 \end{itemize}
 
 \begin{figure}[H]
-  \includegraphics[width=\linewidth]{figures/second2.png}
+  \includegraphics[width=\linewidth]{figures/3.png}
 \end{figure}
 
-Wykres rozwiązania zadanego równania różniczkowego dla danych modelu:\\
-\begin{itemize}
-  \item $\omega = 15$\\
-  \item 5 warstw ukrytych, 128 neuronów w każdej warstwie\\
-  \item liczba punktów treningowych: $3000$\\
-  \item liczba punktów testowych: $5000$
-\end{itemize}
+Wykres błędu rezydualnego obliczonego rozwiązania:\\
 
 \begin{figure}[H]
-  \includegraphics[width=\linewidth]{figures/second3.png}
+  \includegraphics[width=\linewidth]{figures/3_residual.png}
 \end{figure}
 
+Wykres zmieniających się wartości funkcji kosztu danego modelu:
+(w zależności od $1000 \cdot \text{num of iterations}$)\\
+
+\begin{figure}[H]
+  \includegraphics[width=\linewidth]{figures/3_train.png}
+\end{figure}
+
+Analogiczne wykresy dla tych samych danych modelu, ale z \textit{Ansatz}'em:
+$$u(x) = \tanh(\omega x) \cdot NN(x) $$
+
+Wykres rozwiązania zadanego równania różniczkowego: \\
+
+\begin{figure}[H]
+  \includegraphics[width=\linewidth]{figures/3_ans.png}
+\end{figure}
+
+Wykres błędu rezydualnego obliczonego rozwiązania:\\
+
+\begin{figure}[H]
+  \includegraphics[width=\linewidth]{figures/3_ans_residual.png}
+\end{figure}
+
+Wykres zmieniających się wartości funkcji kosztu danego modelu:
+(w zależności od $1000 \cdot \text{num of iterations}$)\\
+
+\begin{figure}[H]
+  \includegraphics[width=\linewidth]{figures/3_ans_train.png}
+\end{figure}
+
+% Wykres rozwiązania zadanego równania różniczkowego dla danych modelu:\\
+% \begin{itemize}
+%   \item $\omega = 15$\\
+%   \item 5 warstw ukrytych, 128 neuronów w każdej warstwie\\
+%   \item liczba punktów treningowych: $3000$\\
+%   \item liczba punktów testowych: $5000$
+% \end{itemize}
+
+\section*{Wnioski}
+\null\quad
+Wykorzystany model w każdej testowanej konfiguracji, nie umożliwił otrzymania
+akceptowalnych wyników wykorzystując dodatkowe założenie \textit{Ansatz} w celu pozbycia
+się warunku \textit{Dirichlet}'a.\\
+Model pierwszy oraz model trzeci (w kolejności testowania), zapewniły satysfakcjonujące wyniki.\\
+W pierwszym z testowanych modeli, wartości funkcji kosztu okazały się być zdecydowanie mniejsze
+dla modelu z \textit{Ansatz}'em.
 
 
 \end{document}
